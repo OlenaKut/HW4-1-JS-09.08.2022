@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS</title>
+    <style>
+      .hw63 {
+        margin: 50px;
+        text-align: center;
+      }
+      .changeButton {
+        color: white;
+        background: rgb(5, 255, 63);
+        border: none;
+        font-size: 24px;
+        padding: 10px 50px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .changeButton:hover {
+        background: rgb(16, 196, 25);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hw63">
+      <button onclick="changeStyle()" class="changeButton">Change style</button>
+      <h2>Hi! My name is Olena</h2>
+      <h2>And how about you?</h2>
+      <h2>What is your name?</h2>
+    </div>
+
+    <script>
+      //Homework 63
+      let counter = 0;
+      let colours = ["red", "green", "blue", "pink", "orange", "black", "gold"];
+      let sizes = ["20px", "25px", "30px", "35px", "40px"];
+      function changeStyle() {
+        let styles = document.getElementsByTagName("h2");
+        for (i = 0; i < styles.length; i++) {
+          styles[i].style.color = colours[counter % colours.length];
+          styles[i].style.border = "2px solid";
+          styles[i].style.border.color = colours[counter % colours.length];
+          styles[i].style.fontSize = sizes[counter % sizes.length];
+        }
+        counter++;
+      }
+    </script>
+  </body>
+</html>
